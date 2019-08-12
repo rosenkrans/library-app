@@ -1,8 +1,8 @@
 {
-    "name": "library-app",
-    "scripts": {
-      "build": "cd client && npm install && npm run build && cd ..",
-      "postinstall": "npm run build && echo 'Client built!'"
-    }
+    "name": "client",
+    "version": "0.1.0",
+    "private": true,
+    "proxy": "http://localhost:8000"
   }
+
   
