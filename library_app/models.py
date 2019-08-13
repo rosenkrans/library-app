@@ -11,7 +11,7 @@ class Book(models.Model):
     author = models.CharField(max_length=400)
     isbn = models.CharField(max_length=255)
     year_published = models.CharField(max_length=4)
-    # artist = models.ForeignKey(Artist, on_delete=models.CASCADE, related_name='songs')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='books', default='')
 
     def __str__(self):
         return self.title
