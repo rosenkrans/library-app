@@ -5,13 +5,13 @@ import { Redirect } from "react-router-dom"
 export default class NewCategoryForm extends Component {
 	state = {
 		newCategory: {
-			name: ""
+			name: ''
 		},
 		redirectToCategories: false
 	};
 
 	handleChange = event => {
-		const copiedNewCategory = { ...this.state.newCategory };
+		const copiedNewCategory = {...this.state.newCategory};
 		copiedNewCategory[event.target.name] = event.target.value;
 		this.setState({ newCategory: copiedNewCategory });
 	};
@@ -21,7 +21,7 @@ export default class NewCategoryForm extends Component {
 		axios.post(`/api/v1/categories/`, this.state.newCategory).then(() => {
 			this.setState({
 				newCategory: {
-					name: ""
+					name: ''
 				},
 				redirectToCategories: true
 			});
@@ -42,10 +42,10 @@ export default class NewCategoryForm extends Component {
 						<label htmlFor='category-name'>Category Name: </label>
 						<input
 							type='text'
-							id='category-name'
 							name='name'
-							value={this.state.newCategory.name}
+							id='category-name'
 							onChange={this.handleChange}
+							value={this.state.newCategory.name}
 						/>
 					</div>
 					

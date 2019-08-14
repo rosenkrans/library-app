@@ -20,7 +20,7 @@ class Member(models.Model):
     name = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=14)
     email = models.CharField(max_length=100)
-    membership_expire_date = models.CharField(max_length=10)
+    member_expiration_date = models.CharField(max_length=10)
 
     def __str__(self):
         return self.name

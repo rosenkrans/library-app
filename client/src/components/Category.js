@@ -7,7 +7,6 @@ export default class Category extends Component {
 
     state = {
         category: {
-            name: '',
             books: []
         },
         isEditFormDisplayed: false,
@@ -19,7 +18,7 @@ export default class Category extends Component {
     }
 
     getSingleCategory = () => {
-        axios.get(`/api/v1/artists/${this.props.match.params.id}/`)
+        axios.get(`/api/v1/categories/${this.props.match.params.categoryId}/`)
             .then((res) => {
                 this.setState({
                     category: res.data
@@ -34,11 +33,11 @@ export default class Category extends Component {
     }
 
     handleChange = (event) => {
-        let copiedBook = {...this.state.newBook}
-        copiedBook[event.target.name] = event.target.value 
+        let copiedCategory = {...this.state.category}
+        copiedCategory[event.target.name] = event.target.value 
 
         this.setState({
-            newBook: copiedBook
+            category: copiedCategory
         })
     }
 
@@ -51,10 +50,9 @@ export default class Category extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.put(`/api/v1/categories/${this.props.match.params.id}/`, this.state.category)
+        axios.put(`/api/v1/categories/${this.props.match.params.categoryId}/`, this.state.category)
             .then(res => {
                 this.setState({
-                    category: res.data,
                     isEditFormDisplayed: false
                 })
             })
@@ -65,7 +63,7 @@ export default class Category extends Component {
 
     render() {
         if(this.state.redirectToCategories) {
-            return <Redirect to='/api/v1/categories/'/>
+            return <Redirect to='/categorylist'/>
         }
 
         let bookList = this.state.category.books.map((book) => {
@@ -81,7 +79,7 @@ export default class Category extends Component {
         return this.state.isEditFormDisplayed ? (
             <form onSubmit={this.handleSubmit}>
 				<div>
-					<label htmlFor='category-name'>Category:</label>
+					<label htmlFor='category-name'>Category: </label>
 					<input
 						type='text'
 						name='name'
@@ -99,15 +97,14 @@ export default class Category extends Component {
                 <h1>{this.state.category.name}</h1>
                 
                 <button
-                    className='edit-category-button'
-                    onClick={this.handleToggleEditForm}>
+                    className='edit-category-button' onClick={this.handleToggleEditForm}>
                     Edit Category
                 </button>
 
                 <h3>Books: </h3>
                 <div>{bookList}</div>
                 <div>
-                    <Link to={`/category/${this.props.match.params.id}/book/new/`}>
+                    <Link to={`/category/${this.props.match.params.categoryId}/book/new/`}>
                         Add New Book
                     </Link>
                 </div>

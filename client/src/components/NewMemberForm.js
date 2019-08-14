@@ -9,7 +9,7 @@ export default class NewMemberForm extends Component {
             name: "",
             phone_number: "",
             email: "",
-            membership_expire_date: ""
+            member_expiration_date: ""
         },
         redirectToMembers: false 
     }
@@ -20,7 +20,8 @@ export default class NewMemberForm extends Component {
         this.setState({ newMember: copiedNewMember });
     }
 
-    hangleSubmit = event => {
+    handleSubmit = event => {
+        console.log('handleSubmit')
         event.preventDefault();
         axios.post(`/api/v1/members/`, this.state.newMember).then(() => {
             this.setState({
@@ -28,7 +29,7 @@ export default class NewMemberForm extends Component {
                     name: "",
                     phone_number: "",
                     email: "",
-                    membership_expire_date: ""
+                    member_expiration_date: ""
                 },
                 redirectToMembers: true 
             })
