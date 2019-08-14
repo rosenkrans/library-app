@@ -6,12 +6,6 @@ export default class Book extends Component {
 
     state = {
         book: {},
-        // book: {
-        //     title: '',
-        //     author: '',
-        //     isbn: '',
-        //     year_published: ''
-        // },
         isEditFormDisplayed: false,
         redirectToBooks: false
     }
@@ -43,7 +37,7 @@ export default class Book extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        axios.put(`/api/v1/categories/${this.props.match.params.categoryId}/books/${this.state.book.id}/`,
+        axios.put(`/api/v1/books/${this.state.book.id}/`,
             this.state.book
         )
             .then(() => {
@@ -55,7 +49,7 @@ export default class Book extends Component {
     }
 
     handleDelete = () => {
-        axios.delete(`/api/v1/categories/${this.props.match.params.categoryId}/books/${this.state.book.bookId}`)
+        axios.delete(`/api/v1/books/${this.state.book.id}/`)
             .then(() => {
                 this.setState({ redirectToBooks: true})
             })
@@ -65,7 +59,7 @@ export default class Book extends Component {
     render() {
         if (this.state.redirectToBooks) {
             return (
-                <Redirect to={`/categorylist/:categoryId/booklist/:bookId`}/>
+                <Redirect to={`/categorylist/${this.props.match.params.categoryId}/`}/>
             )
         }
 

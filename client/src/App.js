@@ -5,6 +5,7 @@ import CategoryList from "./components/CategoryList";
 import NewCategoryForm from "./components/NewCategoryForm";
 import MemberList from "./components/MemberList";
 import NewMemberForm from "./components/NewMemberForm";
+import Member from "./components/Member";
 import NewBookForm from "./components/NewBookForm";
 import Book from "./components/Book";
 import Main from "./components/Main";
@@ -22,6 +23,7 @@ class App extends Component {
                       <Route path="/categorylist/:categoryId" component={Category}/> 
                       <Route path="/categorylist" component={CategoryList}/>
                       <Route path="/category/new" component={NewCategoryForm}/>
+                      <Route path="/memberlist/:memberId" component={Member}/>
                       <Route path="/memberlist" component={MemberList}/>
                       <Route path="/member/new" component={NewMemberForm}/>                                        
                     </Switch>

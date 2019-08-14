@@ -6,10 +6,10 @@ export default class NewMemberForm extends Component {
 
     state = {
         newMember: {
-            name: "",
-            phone_number: "",
-            email: "",
-            member_expiration_date: ""
+            name: '',
+            phone_number: '',
+            email: '',
+            member_expiration_date: ''
         },
         redirectToMembers: false 
     }
@@ -21,20 +21,19 @@ export default class NewMemberForm extends Component {
     }
 
     handleSubmit = event => {
-        console.log('handleSubmit')
         event.preventDefault();
         axios.post(`/api/v1/members/`, this.state.newMember).then(() => {
             this.setState({
                 newMember: {
-                    name: "",
-                    phone_number: "",
-                    email: "",
-                    member_expiration_date: ""
+                    name: '',
+                    phone_number: '',
+                    email: '',
+                    member_expiration_date: ''
                 },
                 redirectToMembers: true 
-            })
-        })
-    }
+            });
+        });
+    };
 
     render() {
         if (this.state.redirectToMembers) {
@@ -46,9 +45,6 @@ export default class NewMemberForm extends Component {
                     <h2>New Member Form</h2>
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                    {/* <div>
-                        <h2>Member Form</h2>
-                    </div> */}
 					<div>
 						<label htmlFor='member-name'>Member Name: </label>
 						<input
@@ -76,7 +72,7 @@ export default class NewMemberForm extends Component {
                             id='email'
                             name='email'
                             value={this.state.newMember.email}
-                            onchange={this.handleChange}
+                            onChange={this.handleChange}
                         />
                     </div>
                     <div>
@@ -84,8 +80,8 @@ export default class NewMemberForm extends Component {
                         <input 
                             type='text'
                             id='member-expiration'
-                            name='member_expiration'
-                            value={this.state.newMember.membership_expire_date} 
+                            name='member_expiration_date'
+                            value={this.state.newMember.member_expiration_date} 
                             onChange={this.handleChange}
                         />
                     </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from "react-router-dom"
+import { Redirect } from 'react-router-dom'
 
 export default class Member extends Component {
 
@@ -42,7 +42,7 @@ export default class Member extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        axios.put(`/api/v1/members/${this.state.member.memberId}/`,
+        axios.put(`/api/v1/members/${this.state.member.id}/`,
             this.state.member 
         )
             .then(() => {
@@ -51,7 +51,7 @@ export default class Member extends Component {
     }
 
     handleDelete = () => {
-        axios.delete(`/api/v1/members/${this.state.member.memberId}/`)
+        axios.delete(`/api/v1/members/${this.state.member.id}/`)
             .then(() => {
                 this.setState({ redirectToMembers: true })
             })
@@ -121,10 +121,10 @@ export default class Member extends Component {
 					</div>
 				) : (
 					<div>
-						<h2>{this.state.member.name}</h2>
-						<p>{this.state.member.phone_number}</p>
-						<p>{this.state.member.email}</p>
-                        <p>{this.state.member.member_expiration_date}</p>
+						<h2>Member Name: {this.state.member.name}</h2>
+						<p>Phone Number: {this.state.member.phone_number}</p>
+						<p>Emaill: {this.state.member.email}</p>
+                        <p>Expiration Date: {this.state.member.member_expiration_date}</p>
 					</div>
 				)}
 				<button onClick={this.handleDelete}>Delete Member</button>
