@@ -14,10 +14,9 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-
                     <Switch>
                       <Route exact path="/" component={Main}/>
-                      <Route path="/cagetorylist/:categoryId/book/new" component={NewBookForm}/>
+                      <Route path="/categorylist/:categoryId/book/new" component={NewBookForm}/>
                       <Route path="/categorylist/:categoryId" component={Category}/> 
                       <Route path="/categorylist" component={CategoryList}/>
                       <Route path="/category/new" component={NewCategoryForm}/>

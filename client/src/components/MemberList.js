@@ -12,6 +12,9 @@ export default class MemberList extends Component {
         return (
             <div>
                 <div>
+                    <Link to={`/`}>Home</Link>
+                </div>
+                <div>
                     <h2>Member List</h2>
                 </div>
                 <div>

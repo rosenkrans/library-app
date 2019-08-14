@@ -42,7 +42,7 @@ export default class Category extends Component {
     }
 
     handleDelete = () => {
-        axios.delete(`/api/v1/categories/${this.state.category.id}/`)
+        axios.delete(`/api/v1/categories/${this.state.category.categoryId}/`)
             .then(() => {
                 this.setState({redirectToCategories: true})
             })
@@ -69,7 +69,7 @@ export default class Category extends Component {
         let bookList = this.state.category.books.map((book) => {
             return(
                 <div>
-                    <Link to={`/category/${this.props.match.params.id}/book/${book.id}/`}>
+                    <Link to={`/category/${this.props.match.params.categoryId}/book/${book.id}/`}>
                         {book.title}
                     </Link>
                 </div>
@@ -93,6 +93,9 @@ export default class Category extends Component {
 			</form>
         ) : (
             <div>
+                <div>
+                    <Link to={`/categorylist`}>Categories</Link>
+                </div>
                 <h1>Single Category</h1>
                 <h1>{this.state.category.name}</h1>
                 
@@ -104,7 +107,7 @@ export default class Category extends Component {
                 <h3>Books: </h3>
                 <div>{bookList}</div>
                 <div>
-                    <Link to={`/category/${this.props.match.params.categoryId}/book/new/`}>
+                    <Link to={`/categorylist/${this.props.match.params.categoryId}/book/new/`}>
                         Add New Book
                     </Link>
                 </div>

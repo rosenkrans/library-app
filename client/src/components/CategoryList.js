@@ -34,6 +34,9 @@ export default class CategoryList extends Component {
 		});
 		return (
 			<div>
+                <div>
+                    <Link to={`/`}>Home</Link>
+                </div>
                 <div><h2>Category List</h2></div>
                 {categoryList}
                 
