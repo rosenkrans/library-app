@@ -35,28 +35,26 @@ export default class Category extends Component {
     handleChange = (event) => {
         let copiedCategory = {...this.state.category}
         copiedCategory[event.target.name] = event.target.value 
-        this.setState({
-            category: copiedCategory
-        })
+        this.setState({category: copiedCategory})
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.put(`/api/v1/categories/${this.state.category.id}/`, 
+            this.state.category
+        )
+            .then(() => {
+                this.setState({isEditFormDisplayed: false})
+            })
+            .then(() => {
+                this.getSingleCategory()
+            })
     }
 
     handleDelete = () => {
         axios.delete(`/api/v1/categories/${this.state.category.id}/`)
             .then(() => {
                 this.setState({redirectToCategories: true})
-            })
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-        axios.put(`/api/v1/categories/${this.props.match.params.categoryId}/`, this.state.category)
-            .then(() => {
-                this.setState({
-                    isEditFormDisplayed: false
-                })
-            })
-            .then(() => {
-                this.getSingleCategory()
             })
     }
 
@@ -68,7 +66,7 @@ export default class Category extends Component {
         let bookList = this.state.category.books.map((book) => {
             return(
                 <div>
-                    <Link to={`/category/${this.props.match.params.categoryId}/book/${book.id}/`}>
+                    <Link to={`/categorylist/${this.props.match.params.categoryId}/booklist/${book.id}/`}>
                         {book.title}
                     </Link>
                 </div>

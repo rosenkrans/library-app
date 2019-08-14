@@ -5,12 +5,13 @@ import axios from 'axios'
 export default class Book extends Component {
 
     state = {
-        book: {
-            title: '',
-            author: '',
-            isbn: '',
-            year_published: ''
-        },
+        book: {},
+        // book: {
+        //     title: '',
+        //     author: '',
+        //     isbn: '',
+        //     year_published: ''
+        // },
         isEditFormDisplayed: false,
         redirectToBooks: false
     }
@@ -20,7 +21,7 @@ export default class Book extends Component {
     }
 
     fetchBook = () => {
-        axios.get(`/api/v1/categories/${this.props.match.params.categoryId}/books/${this.props.match.params.bookId}/`)
+        axios.get(`/api/v1/books/${this.props.match.params.bookId}/`)
             .then(res => {
                 this.setState({
                     book: res.data
@@ -30,23 +31,26 @@ export default class Book extends Component {
 
     handleToggleEditForm = () => {
         this.setState(state => {
-            return { isEditFormDisplayed: !state.isEditFormDisplayed }
+            return {isEditFormDisplayed: !state.isEditFormDisplayed}
         })
     }
 
     handleChange = event => {
         const copiedBook = {...this.state.book}
         copiedBook[event.target.name] = event.target.value 
-        this.setState({ book: copiedBook })
+        this.setState({book: copiedBook})
     }
 
     handleSubmit = event => {
-        event.prevendDefault()
-        axios.put(`/api/v1/categories/${this.props.match.params.categoryId}/books/${this.state.book.bookId}/`,
+        event.preventDefault()
+        axios.put(`/api/v1/categories/${this.props.match.params.categoryId}/books/${this.state.book.id}/`,
             this.state.book
         )
             .then(() => {
-                this.setState({ isEditFormDisplayed: false })
+                this.setState({isEditFormDisplayed: false})
+            })
+            .then(() => {
+                this.fetchBook()
             })
     }
 
@@ -65,7 +69,6 @@ export default class Book extends Component {
             )
         }
 
-
         return (
             <div>
                 <div>
@@ -73,11 +76,11 @@ export default class Book extends Component {
                 </div>
 
                 <div>
-                    <button onClick={this.handleToggleEditForm}>
+                    {/* <button onClick={this.handleToggleEditForm}>
                         {this.state.isEditFormDisplayed
                             ? "Back to Book"
                             : "Edit Book"}
-                    </button>
+                    </button> */}
                     {this.state.isEditFormDisplayed ? (
                         <div>
                             <form onSubmit={this.handleSubmit}>
@@ -128,10 +131,12 @@ export default class Book extends Component {
                         </div>
                     ) : ( 
                         <div>
-                            <h2>{this.state.book.title}</h2>
-                            <h3>{this.state.book.author}</h3>
-                            <p>{this.state.book.isbn}</p>
-                            <p>{this.state.book.year_published}</p>
+                            <button className='edit-book-button' onClick={this.handleToggleEditForm}>Edit Book</button>
+                            <h1>TEST</h1>
+                            <h2>Book Title: {this.state.book.title}</h2>
+                            <h3>Author: {this.state.book.author}</h3>
+                            <p>ISBN: {this.state.book.isbn}</p>
+                            <p>Year Published: {this.state.book.year_published}</p>
                         </div>                   
                     )}
                     <button onClick={this.handleDelete}>Delete Book</button>
