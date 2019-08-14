@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 
@@ -23,7 +24,7 @@ export default class NewBookForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        axios.post(`/api/v1/categories/${this.props.match.params.categoryId}/`, this.state.newBook).then(() => {
+        axios.post(`/api/v1/books/`, this.state.newBook).then(() => {
             this.setState({
                 newBook: {
                     title: '',
@@ -40,10 +41,13 @@ export default class NewBookForm extends Component {
 
     render() {
         if (this.state.redirectToBooks) {
-            return <Redirect to={`/categorylist/:categoryId`}/>
+            return <Redirect to={`/categorylist/${this.props.match.params.categoryId}`}/>
         }
         return (
             <div>
+                <div>
+                    <Link to={`/`}>Home</Link>
+                </div>
                 <div>
                     <h2>New Book Form</h2>
                 </div>

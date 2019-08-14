@@ -35,14 +35,13 @@ export default class Category extends Component {
     handleChange = (event) => {
         let copiedCategory = {...this.state.category}
         copiedCategory[event.target.name] = event.target.value 
-
         this.setState({
             category: copiedCategory
         })
     }
 
     handleDelete = () => {
-        axios.delete(`/api/v1/categories/${this.state.category.categoryId}/`)
+        axios.delete(`/api/v1/categories/${this.state.category.id}/`)
             .then(() => {
                 this.setState({redirectToCategories: true})
             })
@@ -51,7 +50,7 @@ export default class Category extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         axios.put(`/api/v1/categories/${this.props.match.params.categoryId}/`, this.state.category)
-            .then(res => {
+            .then(() => {
                 this.setState({
                     isEditFormDisplayed: false
                 })

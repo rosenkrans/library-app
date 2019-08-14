@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from "axios";
-import { Link } from "react-router-dom";
+import axios from 'axios'
+// import { Link } from "react-router-dom"
 
 export default class Member extends Component {
 
@@ -42,7 +42,7 @@ export default class Member extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        axios.put(`/api/v1/members/${this.state.member.memberId}/`
+        axios.put(`/api/v1/members/${this.state.member.memberId}/`,
             this.state.member 
         )
             .then(() => {
@@ -130,8 +130,6 @@ export default class Member extends Component {
 				<button onClick={this.handleDelete}>Delete Member</button>
 			</div>
 		)
-        
-
     }
 }
 
