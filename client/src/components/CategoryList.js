@@ -27,7 +27,7 @@ export default class CategoryList extends Component {
 			return (
 				<Link to={`/categorylist/${category.id}/`}>
 					<div>
-						<h2>{category.name}</h2>			
+						<h3>{category.name}</h3>			
 					</div>
 				</Link>
 			);
