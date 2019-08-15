@@ -29,7 +29,7 @@ export default class MemberList extends Component {
             return (
                 <Link to={`/memberlist/${member.id}/`}>
                     <div>
-                        <h2>{member.name}</h2>
+                        <p>{member.name}</p>
                     </div>
                 </Link>
             )
@@ -51,3 +51,5 @@ export default class MemberList extends Component {
         )
     }
 }
+
+

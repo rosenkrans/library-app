@@ -5,7 +5,22 @@ body {
 
 .category-list-link {
   margin-bottom: 40px;
+  margin-right: 40px;
 }
+
+.member-list-link {
+  margin-bottom: 40px;
+  
+}
+
+.main-book-image {
+  margin-top: 40px;
+}
+
+
+
+
+
 /* .App {
   text-align: center;
 }
