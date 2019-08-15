@@ -51,10 +51,12 @@ export default class Member extends Component {
     }
 
     handleDelete = () => {
+        if(window.confirm("Are you sure you want to delete?")){ 
         axios.delete(`/api/v1/members/${this.state.member.id}/`)
             .then(() => {
                 this.setState({ redirectToMembers: true })
             })
+        }
     }
 
     render() {

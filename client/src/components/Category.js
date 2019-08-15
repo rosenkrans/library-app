@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom' 
+import Table from 'react-bootstrap/Table'
 import axios from 'axios' 
 
 export default class Category extends Component {
@@ -52,10 +53,12 @@ export default class Category extends Component {
     }
 
     handleDelete = () => {
+        if(window.confirm("Are you sure you want to delete?")){ 
         axios.delete(`/api/v1/categories/${this.state.category.id}/`)
             .then(() => {
                 this.setState({redirectToCategories: true})
             })
+        }
     }
 
     render() {
@@ -65,11 +68,14 @@ export default class Category extends Component {
 
         let bookList = this.state.category.books.map((book) => {
             return(
-                <div>
-                    <Link to={`/categorylist/${this.props.match.params.categoryId}/booklist/${book.id}/`}>
-                        {book.title}
-                    </Link>
-                </div>
+                
+                    <tr>
+                        <th><Link to={`/categorylist/${this.props.match.params.categoryId}/booklist/${book.id}/`}>{book.title}</Link></th>
+                        <th>{book.author}</th>
+                        <th>{book.isbn}</th>
+                        <th>{book.year_published}</th>
+                    </tr>
+                
             )
         })
 
@@ -101,8 +107,26 @@ export default class Category extends Component {
                     Edit Category
                 </button>
 
-                <h3>Book Titles: </h3>
-                <div>{bookList}</div>
+                <h3 className="book-title-header">Book Titles: </h3>
+
+                <Table striped bordered hover size="sm" className="book-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>ISBN</th>
+                            <th>Year Published</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {bookList}
+                    </tbody>
+                </Table>
+
+
+                {/* <div>{bookList}</div> */}
+
+
                 <div className="add-book-link">
                     <Link to={`/categorylist/${this.props.match.params.categoryId}/book/new/`}>
                         <button type="button">
@@ -111,7 +135,7 @@ export default class Category extends Component {
                     </Link>
                 </div>
                 
-                <div>
+                <div className="delete-category-button">
                     <input type='button' onClick={this.handleDelete} value='Delete Category'/>
                 </div>
 

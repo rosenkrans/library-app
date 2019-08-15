@@ -49,10 +49,12 @@ export default class Book extends Component {
     }
 
     handleDelete = () => {
+        if(window.confirm("Are you sure you want to delete?")){ 
         axios.delete(`/api/v1/books/${this.state.book.id}/`)
             .then(() => {
                 this.setState({ redirectToBooks: true})
             })
+        }
     }
 
 

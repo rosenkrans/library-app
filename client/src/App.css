@@ -31,12 +31,20 @@ body {
   margin-top: 50px;
 }
 
+.delete-category-button {
+  margin-top: 50px;
+}
+
 .member-list-link {
   margin-bottom: 40px;
   
 }
 
 .main-book-image {
+  margin-top: 40px;
+}
+
+.book-title-header {
   margin-top: 40px;
 }
 

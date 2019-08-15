@@ -29,14 +29,12 @@ export default class MemberList extends Component {
 
         let memberList = this.state.members.map(member => {
             return (
-                <tr>
-                    
+                <tr>                  
                     <th><Link to={`/memberlist/${member.id}/`}>{member.name}</Link></th>
                     <th>{member.email}</th>
                     <th>{member.phone_number}</th>
                     <th>{member.member_expiration_date}</th>
                 </tr>
-
             )
         })
 
