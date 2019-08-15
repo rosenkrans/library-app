@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 
 export default class NewCategoryForm extends Component {
 	state = {
@@ -34,6 +34,9 @@ export default class NewCategoryForm extends Component {
 		}
 		return (
 			<div>
+				<div>
+                    <Link to={`/categorylist`}>Back to Categories</Link>
+                </div>
 				<form onSubmit={this.handleSubmit}>
                     <div>
                         <h2>Category Form</h2>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 export default class Member extends Component {
 
@@ -121,6 +121,9 @@ export default class Member extends Component {
 					</div>
 				) : (
 					<div>
+                        <div>
+                            <Link to={`/memberlist`}>Back to Member List</Link>
+                        </div>
 						<h2>Member Name: {this.state.member.name}</h2>
 						<p>Phone Number: {this.state.member.phone_number}</p>
 						<p>Emaill: {this.state.member.email}</p>

@@ -8,10 +8,10 @@ export default class Main extends Component {
                 <div>
                     <h1>Library App</h1>
                 </div>
-                <div>
+                <div className="category-list-link">
                     <Link to="/categorylist">Category List</Link>
                 </div>
-                <div>
+                <div className="member-list-link">
                     <Link to="/memberlist">Member List</Link>
                 </div>
             </div>

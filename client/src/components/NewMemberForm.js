@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios' 
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 export default class NewMemberForm extends Component {
 
@@ -41,6 +41,9 @@ export default class NewMemberForm extends Component {
         }
         return (
             <div>
+                <div>
+                    <Link to={`/memberlist`}>Back to Member List</Link>
+                </div>
                 <div>
                     <h2>New Member Form</h2>
                 </div>

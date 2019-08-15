@@ -9,12 +9,14 @@ import Member from "./components/Member";
 import NewBookForm from "./components/NewBookForm";
 import Book from "./components/Book";
 import Main from "./components/Main";
+// import Navbar from "./components/Navbar";
 import "./App.css";
 
 class App extends Component {
     render() {
         return (
             <Router>
+                {/* <Navbar /> */}
                 <div className="App">
                     <Switch>
                       <Route exact path="/" component={Main}/>

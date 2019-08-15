@@ -1,4 +1,12 @@
-.App {
+body {
+  text-align: center;
+  background-color: #FFE4B5;
+}
+
+.category-list-link {
+  margin-bottom: 40px;
+}
+/* .App {
   text-align: center;
 }
 
@@ -30,4 +38,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
