@@ -29,12 +29,14 @@ export default class MemberList extends Component {
 
         let memberList = this.state.members.map(member => {
             return (
+                <tr>
+                    
+                    <th><Link to={`/memberlist/${member.id}/`}>{member.name}</Link></th>
+                    <th>{member.email}</th>
+                    <th>{member.phone_number}</th>
+                    <th>{member.member_expiration_date}</th>
+                </tr>
 
-                <Link to={`/memberlist/${member.id}/`}>
-                    <div>
-                        <p>{member.name}</p>
-                    </div>
-                </Link>
             )
         })
 
@@ -46,10 +48,26 @@ export default class MemberList extends Component {
                 <div>
                     <h2>Member List</h2>
                 </div>
+                
+                <Table striped bordered hover size="sm" className="member-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Expiration Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {memberList}
+                    </tbody>
+                </Table>
+
                 <div>
-				{memberList}
-				<Link to='/member/new'>Add New Member</Link>
-			</div>
+				    <Link to='/member/new'>Add New Member</Link>
+			    </div>
+
+                
             </div>
         )
     }
