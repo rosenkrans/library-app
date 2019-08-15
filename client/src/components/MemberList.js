@@ -66,7 +66,6 @@ export default class MemberList extends Component {
                 <div>
 				    <Link to='/member/new'>Add New Member</Link>
 			    </div>
-
                 
             </div>
         )

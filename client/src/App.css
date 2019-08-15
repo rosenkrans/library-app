@@ -3,9 +3,32 @@ body {
   background-color: #FFE4B5;
 }
 
+/* .category-list-page {
+  align-items: center;
+} */
+
+.category-list-header {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.category-table-div {
+  display: flex;
+  justify-content: center;
+}
+
+.category-table {
+  width: 400px;
+  /* margin-left: 40%; */
+}
+
 .category-list-link {
   margin-bottom: 40px;
   margin-right: 40px;
+}
+
+.add-category-button {
+  margin-top: 50px;
 }
 
 .member-list-link {
@@ -17,7 +40,9 @@ body {
   margin-top: 40px;
 }
 
-
+.add-book-link {
+  margin-top: 200px;
+}
 
 
 

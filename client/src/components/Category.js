@@ -91,9 +91,9 @@ export default class Category extends Component {
         ) : (
             <div>
                 <div>
-                    <Link to={`/categorylist`}>Categories</Link>
+                    <Link to={`/categorylist`}>Back to Categories</Link>
                 </div>
-                <h1>Single Category</h1>
+                {/* <h1>Single Category</h1> */}
                 <h1>{this.state.category.name}</h1>
                 
                 <button
@@ -101,13 +101,16 @@ export default class Category extends Component {
                     Edit Category
                 </button>
 
-                <h3>Books: </h3>
+                <h3>Book Titles: </h3>
                 <div>{bookList}</div>
-                <div>
+                <div className="add-book-link">
                     <Link to={`/categorylist/${this.props.match.params.categoryId}/book/new/`}>
+                        <button type="button">
                         Add New Book
+                        </button>
                     </Link>
                 </div>
+                
                 <div>
                     <input type='button' onClick={this.handleDelete} value='Delete Category'/>
                 </div>

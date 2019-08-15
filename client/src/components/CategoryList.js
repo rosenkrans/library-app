@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Table from 'react-bootstrap/Table'
 
 export default class CategoryList extends Component {
 
@@ -25,25 +26,35 @@ export default class CategoryList extends Component {
     render() {
 		let categoryList = this.state.categories.map(category => {
 			return (
-				<Link to={`/categorylist/${category.id}/`}>
-					<div>
-						<h3>{category.name}</h3>			
-					</div>
-				</Link>
+                <tr>
+                    <th><Link to={`/categorylist/${category.id}/`}>{category.name}</Link></th>
+
+                </tr>
 			);
 		});
 		return (
-			<div>
+			<div className="category-list-page">
                 <div>
-                    <Link to={`/`}>Home</Link>
+                    <Link to={`/`}><button type="button">Home</button></Link>
                 </div>
-                <div><h2>Category List</h2></div>
-                {categoryList}
-                
-				<Link to='/category/new/'>Add New Category</Link>
-			</div>
+                <div className="category-list-header"><h2>Category List</h2></div>
+                <div className="category-table-div">
+                    <Table striped bordered hover size="sm" className="category-table">
+                        <thead>
+                            <tr>
+                                {/* <th>Categories</th> */}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {categoryList}
+                        </tbody>
+                    </Table>
+                </div>
+                <div className="add-category-button">
+				    <Link to='/category/new/'><button type="button">Add New Category</button></Link>
+                </div>
+            </div>
 		);
 	}
-  
 }
 
