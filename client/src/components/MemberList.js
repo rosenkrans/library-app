@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import Table from 'react-bootstrap/Table'
 import axios from 'axios'
 
 export default class MemberList extends Component {
@@ -27,6 +29,7 @@ export default class MemberList extends Component {
 
         let memberList = this.state.members.map(member => {
             return (
+
                 <Link to={`/memberlist/${member.id}/`}>
                     <div>
                         <p>{member.name}</p>
