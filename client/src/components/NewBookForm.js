@@ -53,52 +53,7 @@ export default class NewBookForm extends Component {
                 <div>
                     <h2 className='new-book-form-header'>New Book Form</h2>
                 </div>
-                {/* <form onSubmit={this.handleSubmit}> */}
-                    {/* <div>
-                        <label htmlFor='book-title'>Title: </label>
-                        <input
-                            type='text'
-                            id='book-title'
-                            name='title'
-                            value={this.state.newBook.title}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='author'>Author: </label>
-                        <input
-                            type='text'
-                            id='author'
-                            name='author'
-                            value={this.state.newBook.author}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='isbn'>ISBN: </label>
-                        <input
-                            type='text'
-                            id='isbn'
-                            name='isbn'
-                            value={this.state.newBook.isbn}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='year_published'>Year Published: </label>
-                        <input
-                            type='text'
-                            id='year-published'
-                            name='year_published'
-                            value={this.state.newBook.year_published}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-
-                    <div>
-                        <input type='submit' value='Submit' className="submit"/>
-                    </div> */}
-                {/* </form> */}
+                
                 <div className='new-book-form-div'>
                     <Form onSubmit={this.handleSubmit} className='new-book-form'>
 						<Form.Group controlId="formBookTitle">

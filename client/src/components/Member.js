@@ -71,68 +71,16 @@ export default class Member extends Component {
 
         return (
             <div>
-				{/* <button onClick={this.handleToggleEditForm}>
-					{this.state.isEditFormDisplayed
-						? "Back to Member"
-						: "Edit Member"}
-				</button> */}
                 <Button variant="primary" className='edit-member-button' onClick={this.handleToggleEditForm}>
                     {this.state.isEditFormDisplayed
                         ? "Back to Member"
                         : "Edit Member"}
 				</Button>
-                {/* <button onClick={this.handleDelete} className="delete-member-button">Delete Member</button> */}
+            
                 <Button variant="primary" className='delete-member-button' onClick={this.handleDelete}>
 					Delete Member
 				</Button>
                 {this.state.isEditFormDisplayed ? (
-					// <div>
-					// 	<form onSubmit={this.handleSubmit}>
-					// 		<div>
-					// 			<label htmlFor='member-name'>Name: </label>
-					// 			<input
-					// 				type='text'
-					// 				id='member-name'
-					// 				name='name'
-					// 				value={this.state.member.name}
-					// 				onChange={this.handleChange}
-					// 			/>
-					// 		</div>
-					// 		<div>
-					// 			<label htmlFor='phone-number'>Phone Number : </label>
-					// 			<input
-					// 				type='text'
-					// 				id='phone-number'
-					// 				name='phone_number'
-					// 				value={this.state.member.phone_number}
-					// 				onChange={this.handleChange}
-					// 			/>
-					// 		</div>
-					// 		<div>
-					// 			<label htmlFor='email'>Email: </label>
-					// 			<input
-					// 				type='text'
-					// 				id='email'
-					// 				name='email'
-					// 				value={this.state.member.email}
-					// 				onChange={this.handleChange}
-					// 			/>
-					// 		</div>
-                    //         <div>
-                    //             <label htmlFor='member-expiration-date'>Expiration Date: </label>
-                    //             <input
-                    //                 type='text'
-                    //                 id='member-expiration-date'
-                    //                 name='member_expiration_date'
-                    //                 value={this.state.member.member_expiration_date}
-                    //                 onChange={this.handleChange}
-                    //             />
-                    //         </div>
-					// 		<div>
-					// 			<input type='submit' value='Submit' />
-					// 		</div>
-					// 	</form>
-					// </div>
 
                     <div className='edit-member-form-div'>
                         <Form onSubmit={this.handleSubmit} className='edit-member-form'>
@@ -195,10 +143,7 @@ export default class Member extends Component {
                         <div className="back-to-member-list-div">
                             <Link to={`/memberlist`}>Back to Member List</Link>
                         </div>
-						{/* <h2>Member Name: {this.state.member.name}</h2>
-						<p>Phone Number: {this.state.member.phone_number}</p>
-						<p>Email: {this.state.member.email}</p>
-                        <p>Expiration Date: {this.state.member.member_expiration_date}</p> */}
+				
                         <div className='single-member-table-div'>
                             <Table striped bordered hover size="sm" className="single-member-table">
                                 <thead>

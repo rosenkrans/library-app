@@ -82,20 +82,6 @@ export default class Category extends Component {
         })
 
         return this.state.isEditFormDisplayed ? (
-            // <form onSubmit={this.handleSubmit}>
-			// 	<div>
-			// 		<label htmlFor='category-name'>Category: </label>
-			// 		<input
-			// 			type='text'
-			// 			name='name'
-			// 			id='category-name'
-			// 			onChange={this.handleChange}
-			// 			value={this.state.category.name}
-			// 		/>
-			// 	</div>
-
-			// 	<input type='submit' value='Submit' />
-			// </form>
             
             <div className='edit-category-form-div'>
 					<Form onSubmit={this.handleSubmit} className='edit-category-form'>
@@ -122,17 +108,12 @@ export default class Category extends Component {
                 <div>
                     <Link to={`/categorylist`}>Back to Categories List</Link>
                 </div>
-                {/* <h1>Single Category</h1> */}
                 <h1>{this.state.category.name}</h1>
                 
-                {/* <button
-                    className='edit-category-button' onClick={this.handleToggleEditForm}>
-                    Edit Category
-                </button> */}
                 <Button variant="primary" className='edit-category-button' onClick={this.handleToggleEditForm}>
 					Edit Category
 				</Button>
-                {/* <input type='button' onClick={this.handleDelete} value='Delete Category' className='delete-category-button'/> */}
+    
                 <Button variant="primary" className='delete-category-button' onClick={this.handleDelete}>
 					Delete Category
 				</Button>
@@ -152,21 +133,11 @@ export default class Category extends Component {
                     </tbody>
                 </Table>
 
-
-                {/* <div>{bookList}</div> */}
-
-
                 <div className="add-book-link">
                     <Link to={`/categorylist/${this.props.match.params.categoryId}/book/new/`}>
-                        {/* <button type="button" className="btn add-new-book-button"> */}
                         Add New Book
-                        {/* </button> */}
                     </Link>
                 </div>
-                
-                {/* <div className="delete-category-button-div">
-                    <input type='button' onClick={this.handleDelete} value='Delete Category' className='delete-category-button'/>
-                </div> */}
 
             </div>
         )

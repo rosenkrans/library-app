@@ -70,74 +70,18 @@ export default class Book extends Component {
 
         return (
             <div>
-                {/* <div>
-                    <h2>Single Book</h2>
-                </div> */}
-
-                <div>
-                    {/* <button onClick={this.handleToggleEditForm}>
-                        {this.state.isEditFormDisplayed
-                            ? "Back to Book"
-                            : "Edit Book"}
-                    </button> */}
+                <div>                  
                     <Button variant="primary" className='edit-book-button' onClick={this.handleToggleEditForm}>
                         {this.state.isEditFormDisplayed
                             ? "Back to Book"
                             : "Edit Book"}
 				    </Button>
-                    {/* <button onClick={this.handleDelete} className="delete-book-button">Delete Book</button> */}
+  
                     <Button variant="primary" className='delete-book-button' onClick={this.handleDelete}>
 					    Delete Book
 				    </Button>
                     {this.state.isEditFormDisplayed ? (
-                        // <div>
-                        //     <form onSubmit={this.handleSubmit}>
-                        //         <div>
-                        //             <label htmlFor='book-title'>Title: </label>
-                        //             <input
-                        //                 type='text'
-                        //                 id='book-title'
-                        //                 name='title'
-                        //                 value={this.state.book.title}
-                        //                 onChange={this.handleChange}
-                        //             />
-                        //         </div>
-                        //         <div>
-                        //             <label htmlFor='author'>Author: </label>
-                        //             <input 
-                        //                 type='text'
-                        //                 id='author'
-                        //                 name='author'
-                        //                 value={this.state.book.author}
-                        //                 onChange={this.handleChange}
-                        //             />
-                        //         </div>
-                        //         <div>
-                        //             <label htmlFor='isbn'>ISBN: </label>
-                        //             <input
-                        //                 type='text'
-                        //                 id='isbn'
-                        //                 name='isbn'
-                        //                 value={this.state.book.isbn}
-                        //                 onChange={this.handleChange}
-                        //             />
-                        //         </div>
-                        //         <div>
-                        //             <label htmlFor='year-published'>Year Published: </label>
-                        //             <input 
-                        //                 type='text'
-                        //                 id='year-published'
-                        //                 name='year_published'
-                        //                 value={this.state.book.year_published}
-                        //                 onChange={this.handleChange}
-                        //             />
-                        //         </div>
-
-                        //         <div>
-                        //             <input type='submit' value='Submit'/>
-                        //         </div>
-                        //     </form>
-
+                        
                     <div className='edit-book-form-div'>
                         <Form onSubmit={this.handleSubmit} className='edit-book-form'>
                             <Form.Group controlId="formBookTitle">
@@ -194,17 +138,10 @@ export default class Book extends Component {
 					    </Form>
                     </div>
 
-                        // </div>
                     ) : ( 
                         <div>
-                            {/* <button className='edit-book-button' onClick={this.handleToggleEditForm}>Edit Book</button> */}
-                            {/* <h1>TEST</h1> */}
+                           
                             <div><Link to={`/categorylist/${this.props.match.params.categoryId}/booklist`}>Back to Book List</Link></div>
-                            
-                            {/* <h2>Book Title: {this.state.book.title}</h2>
-                            <h3>Author: {this.state.book.author}</h3>
-                            <p>ISBN: {this.state.book.isbn}</p>
-                            <p>Year Published: {this.state.book.year_published}</p> */}
 
                             <div className='single-book-table-div'>
                             <Table striped bordered hover size="sm" className="single-book-table">

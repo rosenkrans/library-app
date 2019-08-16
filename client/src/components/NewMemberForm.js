@@ -49,52 +49,6 @@ export default class NewMemberForm extends Component {
                 <div>
                     <h2 className='new-member-form-header'>New Member Form</h2>
                 </div>
-                {/* <form onSubmit={this.handleSubmit}>
-					<div>
-						<label htmlFor='member-name'>Member Name: </label>
-						<input
-							type='text'
-							id='member-name'
-							name='name'
-							value={this.state.newMember.name}
-							onChange={this.handleChange}
-						/>
-                    </div>
-                    <div>
-                        <label htmlFor='phone-number'>Phone Number: </label>
-                        <input
-                            type='text'
-                            id='phone-number'
-                            name='phone_number'
-                            value={this.state.newMember.phone_number}
-                            onChange={this.handleChange}
-                        />
-					</div>
-                    <div>
-                        <label htmlFor='email'>Email: </label>
-                        <input
-                            type='text'
-                            id='email'
-                            name='email'
-                            value={this.state.newMember.email}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='member-expiration'>Member Expiration: </label>
-                        <input 
-                            type='text'
-                            id='member-expiration'
-                            name='member_expiration_date'
-                            value={this.state.newMember.member_expiration_date} 
-                            onChange={this.handleChange}
-                        />
-                    </div>
-					
-					<div>
-						<input type='submit' value='Submit' className="submit"/>
-					</div>
-				</form> */}
 
                 <div className='new-member-form-div'>
                     <Form onSubmit={this.handleSubmit} className='new-member-form'>
@@ -151,7 +105,6 @@ export default class NewMemberForm extends Component {
 						</Button>
 					</Form>
                 </div>
-
 
             </div>
         )

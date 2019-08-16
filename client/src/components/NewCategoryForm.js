@@ -43,20 +43,7 @@ export default class NewCategoryForm extends Component {
                     <div>
                         <h2 className='new-category-form-header'>New Category Form</h2>
                     </div>
-					{/* <div>
-						<label htmlFor='category-name'>Category Name: </label>
-						<input
-							type='text'
-							name='name'
-							id='category-name'
-							onChange={this.handleChange}
-							value={this.state.newCategory.name}
-						/>
-					</div> */}
-					
-					{/* <div>
-						<input type='submit' value='Submit' className='submit'/>
-					</div> */}
+		
 				</form>
 				<div className='new-category-form-div'>
 					<Form onSubmit={this.handleSubmit} className='new-category-form'>
