@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import Table from 'react-bootstrap/Table'
 
 export default class Member extends Component {
 
@@ -194,13 +195,33 @@ export default class Member extends Component {
                         <div className="back-to-member-list-div">
                             <Link to={`/memberlist`}>Back to Member List</Link>
                         </div>
-						<h2>Member Name: {this.state.member.name}</h2>
+						{/* <h2>Member Name: {this.state.member.name}</h2>
 						<p>Phone Number: {this.state.member.phone_number}</p>
-						<p>Emaill: {this.state.member.email}</p>
-                        <p>Expiration Date: {this.state.member.member_expiration_date}</p>
+						<p>Email: {this.state.member.email}</p>
+                        <p>Expiration Date: {this.state.member.member_expiration_date}</p> */}
+                        <div className='single-member-table-div'>
+                            <Table striped bordered hover size="sm" className="single-member-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>Expiration Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>                  
+                                        <th>{this.state.member.name}</th>
+                                        <th>{this.state.member.email}</th>
+                                        <th>{this.state.member.phone_number}</th>
+                                        <th>{this.state.member.member_expiration_date}</th>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
+
 					</div>
 				)}
-				{/* <button onClick={this.handleDelete} className="delete-member-button">Delete Member</button> */}
 			</div>
 		)
     }

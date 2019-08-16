@@ -134,6 +134,15 @@ body {
   width: 500px;
 }
 
+.single-member-table-div {
+  display: flex;
+  justify-content: center;
+}
+
+.single-member-table {
+  width: 1000px;
+}
+
 .edit-member-button {
   margin-top: 20px;
   margin-bottom: 30px;
