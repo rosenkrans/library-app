@@ -27,10 +27,11 @@ My Project 4 is a library app.
 * View a list of members
 
 ## ERD:
-![erd](client/src/images/proj3erd.jpg)
+![erd](client/src/components/images/proj4erd.jpg)
 
 ## Wireframe:
-![erd](client/src/images/proj3wireframe.jpg)
+![erd](client/src/components/images/proj4wireframe1.jpg)
+![erd](client/src/components/images/proj4wireframe2.jpg)
 
 ## Future Release Features:
 * 
