@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 export default class Member extends Component {
 
@@ -68,13 +69,21 @@ export default class Member extends Component {
 
         return (
             <div>
-				<button onClick={this.handleToggleEditForm}>
+				{/* <button onClick={this.handleToggleEditForm}>
 					{this.state.isEditFormDisplayed
 						? "Back to Member"
 						: "Edit Member"}
-				</button>
-                <button onClick={this.handleDelete} className="delete-member-button">Delete Member</button>
-				{this.state.isEditFormDisplayed ? (
+				</button> */}
+                <Button variant="primary" className='edit-member-button' onClick={this.handleToggleEditForm}>
+                    {this.state.isEditFormDisplayed
+                        ? "Back to Member"
+                        : "Edit Member"}
+				</Button>
+                {/* <button onClick={this.handleDelete} className="delete-member-button">Delete Member</button> */}
+                <Button variant="primary" className='delete-member-button' onClick={this.handleDelete}>
+					Delete Member
+				</Button>
+                {this.state.isEditFormDisplayed ? (
 					<div>
 						<form onSubmit={this.handleSubmit}>
 							<div>

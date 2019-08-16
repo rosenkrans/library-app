@@ -26,6 +26,19 @@ body {
   /* margin-left: 40%; */
 }
 
+.new-category-form-header {
+  margin-bottom: 40px;
+}
+
+.new-category-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.new-category-form {
+  width: 400px;
+}
+
 .category-list-link {
   margin-bottom: 40px;
   margin-right: 40px;
@@ -45,7 +58,7 @@ body {
 }
 
 .delete-category-button {
-  color: red;
+  /* background-color: red; */
   margin-left: 30px;
   border-radius: 10px;
 }
@@ -58,6 +71,19 @@ body {
   margin-top: 40px;
 }
 
+.new-book-form-header {
+  margin-bottom: 40px;
+}
+
+.new-book-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.new-book-form {
+  width: 500px;
+}
+
 .add-book-link {
   margin-top: 75px;
 }
@@ -67,29 +93,57 @@ body {
 }
 
 .delete-book-button {
-  margin-top: 50px;
-  color: red;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+.edit-book-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+.new-member-form-header {
+  margin-bottom: 40px;
 }
 
 .member-list-link {
   margin-bottom: 40px;
-  
 }
 
 .back-to-member-list-div {
   margin-bottom: 30px;
 }
 
+.new-member-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.new-member-form {
+  width: 500px;
+}
+
+.edit-member-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
 .delete-member-button {
   margin-top: 20px;
   margin-bottom: 30px;
   margin-left: 40px;
-  color: red;
 }
 
 .submit {
   border-radius: 10px;
 }
+
+
+
+
 
 
 

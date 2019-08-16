@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
 export default class Book extends Component {
@@ -72,11 +73,20 @@ export default class Book extends Component {
                 </div> */}
 
                 <div>
-                    <button onClick={this.handleToggleEditForm}>
+                    {/* <button onClick={this.handleToggleEditForm}>
                         {this.state.isEditFormDisplayed
                             ? "Back to Book"
                             : "Edit Book"}
-                    </button>
+                    </button> */}
+                    <Button variant="primary" className='edit-book-button' onClick={this.handleToggleEditForm}>
+                        {this.state.isEditFormDisplayed
+                            ? "Back to Book"
+                            : "Edit Book"}
+				    </Button>
+                    {/* <button onClick={this.handleDelete} className="delete-book-button">Delete Book</button> */}
+                    <Button variant="primary" className='delete-book-button' onClick={this.handleDelete}>
+					    Delete Book
+				    </Button>
                     {this.state.isEditFormDisplayed ? (
                         <div>
                             <form onSubmit={this.handleSubmit}>
@@ -137,7 +147,7 @@ export default class Book extends Component {
                             <p>Year Published: {this.state.book.year_published}</p>
                         </div>                   
                     )}
-                    <button onClick={this.handleDelete} className="delete-book-button">Delete Book</button>
+                    
                 </div>
             </div>
         )

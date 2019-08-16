@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom' 
 import Table from 'react-bootstrap/Table'
+import Button from 'react-bootstrap/Button'
 import axios from 'axios' 
 
 export default class Category extends Component {
@@ -102,11 +103,17 @@ export default class Category extends Component {
                 {/* <h1>Single Category</h1> */}
                 <h1>{this.state.category.name}</h1>
                 
-                <button
+                {/* <button
                     className='edit-category-button' onClick={this.handleToggleEditForm}>
                     Edit Category
-                </button>
-                <input type='button' onClick={this.handleDelete} value='Delete Category' className='delete-category-button'/>
+                </button> */}
+                <Button variant="primary" className='edit-category-button' onClick={this.handleToggleEditForm}>
+					Edit Category
+				</Button>
+                {/* <input type='button' onClick={this.handleDelete} value='Delete Category' className='delete-category-button'/> */}
+                <Button variant="primary" className='delete-category-button' onClick={this.handleDelete}>
+					Delete Category
+				</Button>
                 <h3 className="book-title-header">Book Titles: </h3>
 
                 <Table striped bordered hover size="sm" className="book-table">

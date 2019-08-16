@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { Redirect, Link } from "react-router-dom"
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 export default class NewCategoryForm extends Component {
 	state = {
@@ -39,9 +41,9 @@ export default class NewCategoryForm extends Component {
                 </div>
 				<form onSubmit={this.handleSubmit}>
                     <div>
-                        <h2>Category Form</h2>
+                        <h2 className='new-category-form-header'>New Category Form</h2>
                     </div>
-					<div>
+					{/* <div>
 						<label htmlFor='category-name'>Category Name: </label>
 						<input
 							type='text'
@@ -50,12 +52,31 @@ export default class NewCategoryForm extends Component {
 							onChange={this.handleChange}
 							value={this.state.newCategory.name}
 						/>
-					</div>
+					</div> */}
 					
-					<div>
+					{/* <div>
 						<input type='submit' value='Submit' className='submit'/>
-					</div>
+					</div> */}
 				</form>
+				<div className='new-category-form-div'>
+					<Form onSubmit={this.handleSubmit} className='new-category-form'>
+						<Form.Group controlId="formBasicEmail">
+						{/* <Form.Label>Category Name</Form.Label> */}
+						<Form.Control 
+							type='text' 
+							name='name'
+							placeholder="Enter category name" 
+							id='category-name'
+							onChange={this.handleChange}
+							value={this.state.newCategory.name}
+						/>
+						</Form.Group>
+
+						<Button variant="primary" type="submit">
+							Submit
+						</Button>
+					</Form>
+				</div>
 			</div>
 		);
 	}
