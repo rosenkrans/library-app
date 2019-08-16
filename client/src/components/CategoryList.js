@@ -35,7 +35,8 @@ export default class CategoryList extends Component {
 		return (
 			<div className="category-list-page">
                 <div>
-                    <Link to={`/`}><button type="button">Home</button></Link>
+                    {/* <Link to={`/`}><button type="button">Home</button></Link> */}
+                    <Link to={`/`}>Home</Link>
                 </div>
                 <div className="category-list-header"><h2>Category List</h2></div>
                 <div className="category-table-div">
@@ -51,7 +52,8 @@ export default class CategoryList extends Component {
                     </Table>
                 </div>
                 <div className="add-category-button">
-				    <Link to='/category/new/'><button type="button">Add New Category</button></Link>
+				    {/* <Link to='/category/new/'><button type="button">Add New Category</button></Link> */}
+                    <Link to='/category/new/'>Add New Category</Link>
                 </div>
             </div>
 		);

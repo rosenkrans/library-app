@@ -90,7 +90,7 @@ export default class NewMemberForm extends Component {
                     </div>
 					
 					<div>
-						<input type='submit' value='Submit' />
+						<input type='submit' value='Submit' className="submit"/>
 					</div>
 				</form>
             </div>

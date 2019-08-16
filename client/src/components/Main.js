@@ -6,8 +6,8 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <h1>Library App</h1>
+                <div className="main-header-div">
+                    <h1>LIBRARY APP</h1>
                 </div>
                 
                 <div >
@@ -18,7 +18,7 @@ export default class Main extends Component {
                 
                 </div>
                 <div className="main-book-image">
-                    <img width={500} src={books1}/>
+                    <img width={1100} src={books1}/>
                 </div>
             </div>
         )

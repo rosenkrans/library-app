@@ -53,7 +53,7 @@ export default class NewCategoryForm extends Component {
 					</div>
 					
 					<div>
-						<input type='submit' value='Submit' />
+						<input type='submit' value='Submit' className='submit'/>
 					</div>
 				</form>
 			</div>

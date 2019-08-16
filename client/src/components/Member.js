@@ -73,6 +73,7 @@ export default class Member extends Component {
 						? "Back to Member"
 						: "Edit Member"}
 				</button>
+                <button onClick={this.handleDelete} className="delete-member-button">Delete Member</button>
 				{this.state.isEditFormDisplayed ? (
 					<div>
 						<form onSubmit={this.handleSubmit}>
@@ -123,7 +124,7 @@ export default class Member extends Component {
 					</div>
 				) : (
 					<div>
-                        <div>
+                        <div className="back-to-member-list-div">
                             <Link to={`/memberlist`}>Back to Member List</Link>
                         </div>
 						<h2>Member Name: {this.state.member.name}</h2>
@@ -132,7 +133,7 @@ export default class Member extends Component {
                         <p>Expiration Date: {this.state.member.member_expiration_date}</p>
 					</div>
 				)}
-				<button onClick={this.handleDelete}>Delete Member</button>
+				{/* <button onClick={this.handleDelete} className="delete-member-button">Delete Member</button> */}
 			</div>
 		)
     }

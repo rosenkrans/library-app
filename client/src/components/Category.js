@@ -97,7 +97,7 @@ export default class Category extends Component {
         ) : (
             <div>
                 <div>
-                    <Link to={`/categorylist`}>Back to Categories</Link>
+                    <Link to={`/categorylist`}>Back to Categories List</Link>
                 </div>
                 {/* <h1>Single Category</h1> */}
                 <h1>{this.state.category.name}</h1>
@@ -106,7 +106,7 @@ export default class Category extends Component {
                     className='edit-category-button' onClick={this.handleToggleEditForm}>
                     Edit Category
                 </button>
-
+                <input type='button' onClick={this.handleDelete} value='Delete Category' className='delete-category-button'/>
                 <h3 className="book-title-header">Book Titles: </h3>
 
                 <Table striped bordered hover size="sm" className="book-table">
@@ -129,15 +129,15 @@ export default class Category extends Component {
 
                 <div className="add-book-link">
                     <Link to={`/categorylist/${this.props.match.params.categoryId}/book/new/`}>
-                        <button type="button">
+                        {/* <button type="button" className="btn add-new-book-button"> */}
                         Add New Book
-                        </button>
+                        {/* </button> */}
                     </Link>
                 </div>
                 
-                <div className="delete-category-button">
-                    <input type='button' onClick={this.handleDelete} value='Delete Category'/>
-                </div>
+                {/* <div className="delete-category-button-div">
+                    <input type='button' onClick={this.handleDelete} value='Delete Category' className='delete-category-button'/>
+                </div> */}
 
             </div>
         )

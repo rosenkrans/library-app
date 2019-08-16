@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 
 export default class Book extends Component {
@@ -67,16 +67,16 @@ export default class Book extends Component {
 
         return (
             <div>
-                <div>
+                {/* <div>
                     <h2>Single Book</h2>
-                </div>
+                </div> */}
 
                 <div>
-                    {/* <button onClick={this.handleToggleEditForm}>
+                    <button onClick={this.handleToggleEditForm}>
                         {this.state.isEditFormDisplayed
                             ? "Back to Book"
                             : "Edit Book"}
-                    </button> */}
+                    </button>
                     {this.state.isEditFormDisplayed ? (
                         <div>
                             <form onSubmit={this.handleSubmit}>
@@ -117,6 +117,7 @@ export default class Book extends Component {
                                         id='year-published'
                                         name='year_published'
                                         value={this.state.book.year_published}
+                                        onChange={this.handleChange}
                                     />
                                 </div>
 
@@ -127,15 +128,16 @@ export default class Book extends Component {
                         </div>
                     ) : ( 
                         <div>
-                            <button className='edit-book-button' onClick={this.handleToggleEditForm}>Edit Book</button>
-                            <h1>TEST</h1>
+                            {/* <button className='edit-book-button' onClick={this.handleToggleEditForm}>Edit Book</button> */}
+                            {/* <h1>TEST</h1> */}
+                            <div><Link to={`/categorylist/${this.props.match.params.categoryId}/booklist`}>Back to Book List</Link></div>
                             <h2>Book Title: {this.state.book.title}</h2>
                             <h3>Author: {this.state.book.author}</h3>
                             <p>ISBN: {this.state.book.isbn}</p>
                             <p>Year Published: {this.state.book.year_published}</p>
                         </div>                   
                     )}
-                    <button onClick={this.handleDelete}>Delete Book</button>
+                    <button onClick={this.handleDelete} className="delete-book-button">Delete Book</button>
                 </div>
             </div>
         )

@@ -3,9 +3,13 @@ body {
   background-color: #FFE4B5;
 }
 
-/* .category-list-page {
-  align-items: center;
-} */
+.btn {
+  border-radius: 10px;
+}
+
+.main-header-div {
+  margin-top: 40px;
+}
 
 .category-list-header {
   margin-top: 20px;
@@ -27,17 +31,23 @@ body {
   margin-right: 40px;
 }
 
+.edit-category-button {
+  border-radius: 10px;
+}
+
 .add-category-button {
+  margin-top: 50px;
+  /* border-radius: 10px; */
+}
+
+.delete-category-button-div {
   margin-top: 50px;
 }
 
 .delete-category-button {
-  margin-top: 50px;
-}
-
-.member-list-link {
-  margin-bottom: 40px;
-  
+  color: red;
+  margin-left: 30px;
+  border-radius: 10px;
 }
 
 .main-book-image {
@@ -49,8 +59,40 @@ body {
 }
 
 .add-book-link {
-  margin-top: 200px;
+  margin-top: 75px;
 }
+
+.add-new-book-button {
+  border-radius: 10px;
+}
+
+.delete-book-button {
+  margin-top: 50px;
+  color: red;
+}
+
+.member-list-link {
+  margin-bottom: 40px;
+  
+}
+
+.back-to-member-list-div {
+  margin-bottom: 30px;
+}
+
+.delete-member-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+  color: red;
+}
+
+.submit {
+  border-radius: 10px;
+}
+
+
+
 
 
 
