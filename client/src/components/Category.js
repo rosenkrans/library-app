@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom' 
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 import axios from 'axios' 
 
 export default class Category extends Component {
@@ -81,20 +82,41 @@ export default class Category extends Component {
         })
 
         return this.state.isEditFormDisplayed ? (
-            <form onSubmit={this.handleSubmit}>
-				<div>
-					<label htmlFor='category-name'>Category: </label>
-					<input
-						type='text'
-						name='name'
-						id='category-name'
-						onChange={this.handleChange}
-						value={this.state.category.name}
-					/>
+            // <form onSubmit={this.handleSubmit}>
+			// 	<div>
+			// 		<label htmlFor='category-name'>Category: </label>
+			// 		<input
+			// 			type='text'
+			// 			name='name'
+			// 			id='category-name'
+			// 			onChange={this.handleChange}
+			// 			value={this.state.category.name}
+			// 		/>
+			// 	</div>
+
+			// 	<input type='submit' value='Submit' />
+			// </form>
+            
+            <div className='edit-category-form-div'>
+					<Form onSubmit={this.handleSubmit} className='edit-category-form'>
+						<Form.Group controlId="formCategoryEditForm">
+                        <Form.Label>Category Name</Form.Label>
+						<Form.Control 
+							type='text' 
+							name='name'
+							placeholder="Enter category name" 
+							id='category-name'
+							onChange={this.handleChange}
+							value={this.state.category.name}
+						/>
+						</Form.Group>
+
+						<Button variant="primary" type="submit">
+							Submit
+						</Button>
+					</Form>
 				</div>
 
-				<input type='submit' value='Submit' />
-			</form>
         ) : (
             <div>
                 <div>

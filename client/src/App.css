@@ -39,6 +39,15 @@ body {
   width: 400px;
 }
 
+.edit-category-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-category-form {
+  width: 400px;
+}
+
 .category-list-link {
   margin-bottom: 40px;
   margin-right: 40px;
@@ -129,6 +138,15 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
   margin-left: 40px;
+}
+
+.edit-member-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-member-form {
+  width: 400px;
 }
 
 .delete-member-button {

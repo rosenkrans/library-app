@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 export default class Member extends Component {
 
@@ -84,53 +85,110 @@ export default class Member extends Component {
 					Delete Member
 				</Button>
                 {this.state.isEditFormDisplayed ? (
-					<div>
-						<form onSubmit={this.handleSubmit}>
-							<div>
-								<label htmlFor='member-name'>Name: </label>
-								<input
-									type='text'
-									id='member-name'
-									name='name'
-									value={this.state.member.name}
-									onChange={this.handleChange}
-								/>
-							</div>
-							<div>
-								<label htmlFor='phone-number'>Phone Number : </label>
-								<input
-									type='text'
-									id='phone-number'
-									name='phone_number'
-									value={this.state.member.phone_number}
-									onChange={this.handleChange}
-								/>
-							</div>
-							<div>
-								<label htmlFor='email'>Email: </label>
-								<input
-									type='text'
-									id='email'
-									name='email'
-									value={this.state.member.email}
-									onChange={this.handleChange}
-								/>
-							</div>
-                            <div>
-                                <label htmlFor='member-expiration-date'>Expiration Date: </label>
-                                <input
-                                    type='text'
-                                    id='member-expiration-date'
-                                    name='member_expiration_date'
-                                    value={this.state.member.member_expiration_date}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-							<div>
-								<input type='submit' value='Submit' />
-							</div>
-						</form>
-					</div>
+					// <div>
+					// 	<form onSubmit={this.handleSubmit}>
+					// 		<div>
+					// 			<label htmlFor='member-name'>Name: </label>
+					// 			<input
+					// 				type='text'
+					// 				id='member-name'
+					// 				name='name'
+					// 				value={this.state.member.name}
+					// 				onChange={this.handleChange}
+					// 			/>
+					// 		</div>
+					// 		<div>
+					// 			<label htmlFor='phone-number'>Phone Number : </label>
+					// 			<input
+					// 				type='text'
+					// 				id='phone-number'
+					// 				name='phone_number'
+					// 				value={this.state.member.phone_number}
+					// 				onChange={this.handleChange}
+					// 			/>
+					// 		</div>
+					// 		<div>
+					// 			<label htmlFor='email'>Email: </label>
+					// 			<input
+					// 				type='text'
+					// 				id='email'
+					// 				name='email'
+					// 				value={this.state.member.email}
+					// 				onChange={this.handleChange}
+					// 			/>
+					// 		</div>
+                    //         <div>
+                    //             <label htmlFor='member-expiration-date'>Expiration Date: </label>
+                    //             <input
+                    //                 type='text'
+                    //                 id='member-expiration-date'
+                    //                 name='member_expiration_date'
+                    //                 value={this.state.member.member_expiration_date}
+                    //                 onChange={this.handleChange}
+                    //             />
+                    //         </div>
+					// 		<div>
+					// 			<input type='submit' value='Submit' />
+					// 		</div>
+					// 	</form>
+					// </div>
+
+                    <div className='edit-member-form-div'>
+                        <Form onSubmit={this.handleSubmit} className='edit-member-form'>
+                            <Form.Group controlId="formMemberName">
+                            <Form.Label>Member Name</Form.Label>
+                            <Form.Control 
+                                type='text' 
+                                name='name'
+                                placeholder="Enter first and last name" 
+                                id='member-name'
+                                onChange={this.handleChange}
+                                value={this.state.member.name}
+                            />
+                            </Form.Group>
+
+                            <Form.Group controlId="formMemberPhoneNumber">
+                            <Form.Label>Member Phone Number</Form.Label>
+                            <Form.Control 
+                                type='text' 
+                                name='phone_number'
+                                placeholder="Enter phone number" 
+                                id='phone-number'
+                                onChange={this.handleChange}
+                                value={this.state.member.phone_number}
+                            />
+                            </Form.Group>
+
+                            <Form.Group controlId="formMemberEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control 
+                                type='text' 
+                                name='email'
+                                placeholder="Enter email address" 
+                                id='email'
+                                onChange={this.handleChange}
+                                value={this.state.member.email}
+                            />
+                            </Form.Group>
+
+                            <Form.Group controlId="formMemberExpirationDate">
+                            <Form.Label>Member Expiration Date</Form.Label>
+                            <Form.Control 
+                                type='text' 
+                                name='member_expiration_date'
+                                placeholder="Enter member expiration date" 
+                                id='member-expiration-date'
+                                onChange={this.handleChange}
+                                value={this.state.member.member_expiration_date}
+                            />
+                            </Form.Group>
+
+                            <Button variant="primary" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                    </div>
+
 				) : (
 					<div>
                         <div className="back-to-member-list-div">

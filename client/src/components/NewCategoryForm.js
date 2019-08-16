@@ -60,7 +60,7 @@ export default class NewCategoryForm extends Component {
 				</form>
 				<div className='new-category-form-div'>
 					<Form onSubmit={this.handleSubmit} className='new-category-form'>
-						<Form.Group controlId="formBasicEmail">
+						<Form.Group controlId="formCategoryNewForm">
 						{/* <Form.Label>Category Name</Form.Label> */}
 						<Form.Control 
 							type='text' 
