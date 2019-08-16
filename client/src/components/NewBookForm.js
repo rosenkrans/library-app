@@ -102,7 +102,7 @@ export default class NewBookForm extends Component {
                 <div className='new-book-form-div'>
                     <Form onSubmit={this.handleSubmit} className='new-book-form'>
 						<Form.Group controlId="formBookTitle">
-						<Form.Label>Book Name</Form.Label>
+						<Form.Label>Book Title</Form.Label>
 						<Form.Control 
 							type='text' 
 							name='title'

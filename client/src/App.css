@@ -107,14 +107,38 @@ body {
   margin-left: 40px;
 }
 
+.edit-book-form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-book-form {
+  width: 400px;
+}
+
+.new-book-form-header {
+  margin-bottom: 40px;
+}
+
+.single-book-table-div {
+  display: flex;
+  justify-content: center;
+}
+
+.single-book-table {
+  width: 1000px;
+}
+
 .edit-book-button {
   margin-top: 20px;
   margin-bottom: 30px;
   margin-left: 40px;
 }
 
-.new-member-form-header {
-  margin-bottom: 40px;
+.delete-book-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
 }
 
 .member-list-link {
