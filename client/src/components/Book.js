@@ -132,6 +132,18 @@ export default class Book extends Component {
                             />
                             </Form.Group>
 
+                            <Form.Group controlId="formBookCheckedOut">
+						    <Form.Label>Checked Out</Form.Label>
+						    <Form.Control 
+                                type='text' 
+                                name='checked_out'
+                                placeholder="Enter checked out y/n" 
+                                id='checked-out'
+                                onChange={this.handleChange}
+                                value={this.state.book.checked_out}
+						    />
+						</Form.Group>
+
                             <Button variant="primary" type="submit">
                                 Submit
                             </Button>
@@ -151,6 +163,7 @@ export default class Book extends Component {
                                         <th>Author</th>
                                         <th>ISBN</th>
                                         <th>Date Published</th>
+                                        <th>Checked Out</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -159,6 +172,7 @@ export default class Book extends Component {
                                         <th>{this.state.book.author}</th>
                                         <th>{this.state.book.isbn}</th>
                                         <th>{this.state.book.year_published}</th>
+                                        <th>{this.state.book.checked_out}</th>
                                     </tr>
                                 </tbody>
                             </Table>

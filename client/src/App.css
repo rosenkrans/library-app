@@ -3,12 +3,36 @@ body {
   background-color: #FFE4B5;
 }
 
+#main-page-body {
+  background-image: url('./components/images/books1.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
+.main-page-top {
+  background-color: #FFE4B5;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.main-links-div {
+  margin-bottom: 30px;
+}
+
+.main-book-image {
+  margin-top: 40px;
+}
+
 .btn {
   border-radius: 10px;
 }
 
 .main-header-div {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .category-list-header {
@@ -70,10 +94,6 @@ body {
   /* background-color: red; */
   margin-left: 30px;
   border-radius: 10px;
-}
-
-.main-book-image {
-  margin-top: 40px;
 }
 
 .book-title-header {

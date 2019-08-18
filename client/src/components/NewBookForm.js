@@ -13,6 +13,7 @@ export default class NewBookForm extends Component {
             author: '',
             isbn: '',
             year_published: '',
+            checked_out: '',
             category: this.props.match.params.categoryId
         },
         redirectToBooks: false
@@ -33,6 +34,7 @@ export default class NewBookForm extends Component {
                     author: '',
                     isbn: '',
                     year_published: '',
+                    checked_out: '',
                     category: this.props.match.params.categoryId 
                 },
                 redirectToBooks: true
@@ -101,6 +103,18 @@ export default class NewBookForm extends Component {
 							id='year-published'
 							onChange={this.handleChange}
 							value={this.state.newBook.year_published}
+						/>
+						</Form.Group>
+
+                        <Form.Group controlId="formBookCheckedOut">
+						<Form.Label>Checked Out</Form.Label>
+						<Form.Control 
+							type='text' 
+							name='checked_out'
+							placeholder="Enter checked out y/n" 
+							id='checked-out'
+							onChange={this.handleChange}
+							value={this.state.newBook.checked_out}
 						/>
 						</Form.Group>
 

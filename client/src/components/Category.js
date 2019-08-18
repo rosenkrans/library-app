@@ -76,6 +76,7 @@ export default class Category extends Component {
                         <th>{book.author}</th>
                         <th>{book.isbn}</th>
                         <th>{book.year_published}</th>
+                        <th>{book.checked_out}</th>
                     </tr>
                 
             )
@@ -126,6 +127,7 @@ export default class Category extends Component {
                             <th>Author</th>
                             <th>ISBN</th>
                             <th>Year Published</th>
+                            <th>Checked Out</th>
                         </tr>
                     </thead>
                     <tbody>
