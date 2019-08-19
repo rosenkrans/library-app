@@ -142,7 +142,31 @@ export default class Book extends Component {
                                 onChange={this.handleChange}
                                 value={this.state.book.checked_out}
 						    />
-						</Form.Group>
+						    </Form.Group>
+
+                            <Form.Group controlId="formBookCheckedOutName">
+						    <Form.Label>Member Name</Form.Label>
+						    <Form.Control 
+                                type='text' 
+                                name='checked_out_name'
+                                placeholder="Enter member name" 
+                                id='checked-out-name'
+                                onChange={this.handleChange}
+                                value={this.state.book.checked_out_name}
+						    />
+						    </Form.Group>
+
+                            <Form.Group controlId="formBookDueDate">
+						    <Form.Label>Due Date</Form.Label>
+						    <Form.Control 
+                                type='text' 
+                                name='due_date'
+                                placeholder="Enter due date" 
+                                id='due-date'
+                                onChange={this.handleChange}
+                                value={this.state.book.due_date}
+						    />
+						    </Form.Group>
 
                             <Button variant="primary" type="submit">
                                 Submit
@@ -164,6 +188,8 @@ export default class Book extends Component {
                                         <th>ISBN</th>
                                         <th>Date Published</th>
                                         <th>Checked Out</th>
+                                        <th>Member Name</th>
+                                        <th>Due Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -173,6 +199,8 @@ export default class Book extends Component {
                                         <th>{this.state.book.isbn}</th>
                                         <th>{this.state.book.year_published}</th>
                                         <th>{this.state.book.checked_out}</th>
+                                        <th>{this.state.book.checked_out_name}</th>
+                                        <th>{this.state.book.due_date}</th>
                                     </tr>
                                 </tbody>
                             </Table>

@@ -9,11 +9,29 @@ import Member from "./components/Member";
 import NewBookForm from "./components/NewBookForm";
 import Book from "./components/Book";
 import Main from "./components/Main";
+import Login from "./components/Login";
 // import Navbar from "./components/Navbar";
 import "./App.css";
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+      
+        this.state = {
+          isAuthenticated: false
+        };
+      }
+      
+      userHasAuthenticated = authenticated => {
+        this.setState({ isAuthenticated: authenticated });
+      }
+      
     render() {
+        const childProps = {
+            isAuthenticated: this.state.isAuthenticated,
+            userHasAuthenticated: this.userHasAuthenticated
+          };
+          
         return (
             <Router>
                 {/* <Navbar /> */}
@@ -27,7 +45,9 @@ class App extends Component {
                       <Route path="/category/new" component={NewCategoryForm}/>
                       <Route path="/memberlist/:memberId" component={Member}/>
                       <Route path="/memberlist" component={MemberList}/>
-                      <Route path="/member/new" component={NewMemberForm}/>                                        
+                      <Route path="/member/new" component={NewMemberForm}/>    
+                      <Route path="/login" exact component={Login} />     
+                      <Route childProps={childProps} />                               
                     </Switch>
                 </div>
             </Router>

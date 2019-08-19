@@ -16,10 +16,6 @@ export default class Main extends Component {
                         <Link className="member-list-link" to="/memberlist"><b>Member List</b></Link>
                     </div>
                 </div>
-
-                {/* <div className="main-book-image">
-                    <img width={1100} src={books1}/>
-                </div> */}
             </div>
         )
     }

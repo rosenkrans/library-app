@@ -41,6 +41,10 @@ export default class Category extends Component {
         this.setState({category: copiedCategory})
     }
 
+    // create a handle sort method
+    // create a copy of the array for sorting to not update state directly
+
+
     handleSubmit = (event) => {
         event.preventDefault()
         axios.put(`/api/v1/categories/${this.state.category.id}/`, 
@@ -77,11 +81,13 @@ export default class Category extends Component {
                         <th>{book.isbn}</th>
                         <th>{book.year_published}</th>
                         <th>{book.checked_out}</th>
+                        <th>{book.checked_out_name}</th>
+                        <th>{book.due_date}</th>
                     </tr>
                 
             )
         })
-
+        
         return this.state.isEditFormDisplayed ? (
             
             <div className='edit-category-form-div'>
@@ -123,11 +129,14 @@ export default class Category extends Component {
                 <Table striped bordered hover size="sm" className="book-table">
                     <thead>
                         <tr>
-                            <th>Title</th>
+                            {/* create a button in title header with an onClick to call handleSort */}
+                            <th>Title </th>
                             <th>Author</th>
                             <th>ISBN</th>
                             <th>Year Published</th>
                             <th>Checked Out</th>
+                            <th>Member Name</th>
+                            <th>Due Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -145,4 +154,6 @@ export default class Category extends Component {
         )
     }
 }
+
+
 

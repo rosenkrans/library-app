@@ -12,6 +12,8 @@ class Book(models.Model):
     isbn = models.CharField(max_length=255)
     year_published = models.CharField(max_length=4)
     checked_out = models.CharField(max_length=1, default='')
+    checked_out_name = models.CharField(max_length=100, default='')
+    due_date = models.CharField(max_length=10, default='')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='books', default='')
 
     def __str__(self):

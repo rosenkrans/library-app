@@ -90,7 +90,7 @@ export default class Member extends Component {
                                 type='text' 
                                 name='name'
                                 placeholder="Enter first and last name" 
-                                id='member-name'
+                                id='name'
                                 onChange={this.handleChange}
                                 value={this.state.member.name}
                             />
