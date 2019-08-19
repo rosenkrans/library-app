@@ -9,7 +9,6 @@ import Member from "./components/Member";
 import NewBookForm from "./components/NewBookForm";
 import Book from "./components/Book";
 import Main from "./components/Main";
-import Login from "./components/Login";
 import "./App.css";
 
 class App extends Component {
@@ -45,7 +44,7 @@ class App extends Component {
                       <Route path="/memberlist/:memberId" component={Member}/>
                       <Route path="/memberlist" component={MemberList}/>
                       <Route path="/member/new" component={NewMemberForm}/>    
-                      <Route path="/login" exact component={Login} />     
+                         
                       <Route childProps={childProps} />                               
                     </Switch>
                 </div>
