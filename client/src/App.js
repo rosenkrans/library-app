@@ -10,7 +10,6 @@ import NewBookForm from "./components/NewBookForm";
 import Book from "./components/Book";
 import Main from "./components/Main";
 import Login from "./components/Login";
-// import Navbar from "./components/Navbar";
 import "./App.css";
 
 class App extends Component {

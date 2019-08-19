@@ -42,9 +42,24 @@ export default class Category extends Component {
     }
 
     // create a handle sort method
-    // create a copy of the array for sorting to not update state directly
-
-
+    handleSort = (event) => {
+        // create a copy of the array for sorting to not update state directly
+        let copiedArray = [...this.state.category.books]
+        let copiedCategory = {...this.state.category} 
+        copiedArray.sort(function (a, b) {
+            if (a.title < b.title) {
+                return -1;
+            }
+            if (a.title > b.title) {
+                return 1;
+            }
+            return 0;
+        })
+        console.log(copiedArray)
+        copiedCategory.books = copiedArray 
+        this.setState({category: copiedCategory})
+    }
+    
     handleSubmit = (event) => {
         event.preventDefault()
         axios.put(`/api/v1/categories/${this.state.category.id}/`, 
@@ -129,8 +144,7 @@ export default class Category extends Component {
                 <Table striped bordered hover size="sm" className="book-table">
                     <thead>
                         <tr>
-                            {/* create a button in title header with an onClick to call handleSort */}
-                            <th>Title </th>
+                            <th>Title<button onClick={this.handleSort}>Sort</button></th>
                             <th>Author</th>
                             <th>ISBN</th>
                             <th>Year Published</th>
