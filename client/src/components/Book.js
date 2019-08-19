@@ -84,7 +84,7 @@ export default class Book extends Component {
                         
                     <div className='edit-book-form-div'>
                         <Form onSubmit={this.handleSubmit} className='edit-book-form'>
-                            <Form.Group controlId="formBookTitle">
+                            <Form.Group>
                             <Form.Label>Book Title</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -96,7 +96,7 @@ export default class Book extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formBookAuthor">
+                            <Form.Group>
                             <Form.Label>Book Author</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -108,7 +108,7 @@ export default class Book extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formBookISBN">
+                            <Form.Group>
                             <Form.Label>ISBN</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -120,7 +120,7 @@ export default class Book extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formBookYearPublished">
+                            <Form.Group>
                             <Form.Label>Year Published</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -132,7 +132,7 @@ export default class Book extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formBookCheckedOut">
+                            <Form.Group>
 						    <Form.Label>Checked Out</Form.Label>
 						    <Form.Control 
                                 type='text' 
@@ -144,7 +144,7 @@ export default class Book extends Component {
 						    />
 						    </Form.Group>
 
-                            <Form.Group controlId="formBookCheckedOutName">
+                            <Form.Group>
 						    <Form.Label>Member Name</Form.Label>
 						    <Form.Control 
                                 type='text' 
@@ -156,7 +156,7 @@ export default class Book extends Component {
 						    />
 						    </Form.Group>
 
-                            <Form.Group controlId="formBookDueDate">
+                            <Form.Group>
 						    <Form.Label>Due Date</Form.Label>
 						    <Form.Control 
                                 type='text' 

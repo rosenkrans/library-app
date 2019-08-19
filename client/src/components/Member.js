@@ -85,7 +85,7 @@ export default class Member extends Component {
 
                     <div className='edit-member-form-div'>
                         <Form onSubmit={this.handleSubmit} className='edit-member-form'>
-                            <Form.Group controlId="formMemberName">
+                            <Form.Group>
                             <Form.Label>Member Name</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -97,7 +97,7 @@ export default class Member extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formMemberPhoneNumber">
+                            <Form.Group>
                             <Form.Label>Member Phone Number</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -109,7 +109,7 @@ export default class Member extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formMemberEmail">
+                            <Form.Group>
                             <Form.Label>Email</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -121,7 +121,7 @@ export default class Member extends Component {
                             />
                             </Form.Group>
 
-                            <Form.Group controlId="formMemberExpirationDate">
+                            <Form.Group>
                             <Form.Label>Member Expiration Date</Form.Label>
                             <Form.Control 
                                 type='text' 

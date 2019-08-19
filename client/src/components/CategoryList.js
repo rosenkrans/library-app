@@ -26,7 +26,7 @@ export default class CategoryList extends Component {
     render() {
 		let categoryList = this.state.categories.map(category => {
 			return (
-                <tr>
+                <tr key={category.id}>
                     <th><Link to={`/categorylist/${category.id}/`}>{category.name}</Link></th>
 
                 </tr>

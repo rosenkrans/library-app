@@ -13,7 +13,7 @@ export default class Category extends Component {
             books: []
         },
         isEditFormDisplayed: false,
-        redirectToCategories: false
+        redirectToCategories: false,
     }
 
     componentDidMount() {
@@ -46,7 +46,7 @@ export default class Category extends Component {
         let copiedCategory = {...this.state.category} 
         copiedArray.sort(function (a, b) {
             if (a.title < b.title) {
-                return -1;
+                return -1;              
             }
             if (a.title > b.title) {
                 return 1;
