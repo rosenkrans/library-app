@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom' 
-import books1 from './images/books1.jpg'
 
 export default class Main extends Component {
     render() {

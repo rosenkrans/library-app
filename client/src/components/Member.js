@@ -9,6 +9,7 @@ export default class Member extends Component {
 
     state = {
         member: {
+            id: '',
             name: '',
             phone_number: '',
             email: '',
@@ -148,6 +149,7 @@ export default class Member extends Component {
                             <Table striped bordered hover size="sm" className="single-member-table">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone Number</th>
@@ -155,7 +157,8 @@ export default class Member extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>                  
+                                    <tr>
+                                        <th>{this.state.member.id}</th>             
                                         <th>{this.state.member.name}</th>
                                         <th>{this.state.member.email}</th>
                                         <th>{this.state.member.phone_number}</th>

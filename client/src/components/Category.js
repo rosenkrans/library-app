@@ -41,9 +41,7 @@ export default class Category extends Component {
         this.setState({category: copiedCategory})
     }
 
-    // create a handle sort method
-    handleSort = (event) => {
-        // create a copy of the array for sorting to not update state directly
+    handleSort = () => {
         let copiedArray = [...this.state.category.books]
         let copiedCategory = {...this.state.category} 
         copiedArray.sort(function (a, b) {
@@ -88,9 +86,9 @@ export default class Category extends Component {
         }
 
         let bookList = this.state.category.books.map((book) => {
-            return(
-                
-                    <tr>
+            return(               
+                    <tr key={book.id}>
+                        <th>{book.id}</th>
                         <th><Link to={`/categorylist/${this.props.match.params.categoryId}/booklist/${book.id}/`}>{book.title}</Link></th>
                         <th>{book.author}</th>
                         <th>{book.isbn}</th>
@@ -139,12 +137,13 @@ export default class Category extends Component {
                 <Button variant="primary" className='delete-category-button' onClick={this.handleDelete}>
 					Delete Category
 				</Button>
-                <h3 className="book-title-header">Book Titles: </h3>
+                <h3 className="book-title-header">Book List: </h3>
 
                 <Table striped bordered hover size="sm" className="book-table">
                     <thead>
                         <tr>
-                            <th>Title<button onClick={this.handleSort}>Sort</button></th>
+                            <th>ID</th>
+                            <th><button onClick={this.handleSort}>Title</button></th>
                             <th>Author</th>
                             <th>ISBN</th>
                             <th>Year Published</th>
