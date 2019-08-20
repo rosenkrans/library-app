@@ -9,6 +9,7 @@ export default class Book extends Component {
 
     state = {
         book: {},
+        isbn: {},
         isEditFormDisplayed: false,
         redirectToBooks: false
     }

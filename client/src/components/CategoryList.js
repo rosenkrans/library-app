@@ -37,7 +37,13 @@ export default class CategoryList extends Component {
                 <div>
                     <Link to={`/`}>Home</Link>
                 </div>
+
+                <div className="search-isbn-button">
+                    <Link to='/categorylist/searchISBN/'>Search By ISBN</Link>
+                </div>
+
                 <div className="category-list-header"><h2>Category List</h2></div>
+                               
                 <div className="category-table-div">
                     <Table striped bordered hover size="sm" className="category-table">
                         <thead>

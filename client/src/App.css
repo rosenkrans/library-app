@@ -212,9 +212,22 @@ body {
   border-radius: 10px;
 }
 
+.isbn-search-form-div {
+  display: flex;
+  justify-content: center;
+}
 
+.isbn-search-form {
+  width: 300px;
+}
 
+.bib-key-td {
+  width: 600px;
+}
 
+.book-image {
+  margin-top: 30px;
+}
 
 
 
