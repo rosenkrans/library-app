@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
@@ -16,7 +16,8 @@ export default class ISBNForm extends Component {
             preview: '',
             preview_url: '',
             thumbnail_url: ''
-        }
+        },
+        redirectToISBNForm: false
     }
 
     handleChange = (event) => {
@@ -30,21 +31,34 @@ export default class ISBNForm extends Component {
                 // let test = JSON.stringify(res.data)
                 // console.log(test)
                 let data = res.data
+                // console.log(res.data)
                 let parsedData = JSON.parse(data.substring(data.indexOf("{"), data.lastIndexOf("}") + 1))
+                console.log(typeof parsedData)
+                // let stringData = JSON.stringify(parsedData)
+                // console.log(stringData)
                 let resultKeys = Object.keys
-                this.setState({
-                    isbn: Object.values(parsedData)[0]
-                })
-            })
-            .catch(error => {
-                window.alert("CANNOT GET BOOK INFORMATION FROM THAT ISBN")
 
-                console.log(error);
-              })
+                if(Object.keys(parsedData).length !== 0) {
+                    this.setState({
+                        isbn: Object.values(parsedData)[0],
+                    })
+                } else (window.alert("CANNOT GET BOOK INFORMATION FROM THAT ISBN"))
+            })
+            .catch(err => {
+                // window.alert("CANNOT GET BOOK INFORMATION FROM THAT ISBN")
+                
+                console.log(err);
+                this.setState({redirectToISBNForm: true})
+                
+            })
+           
     }
 
 
     render() {
+        if(this.state.redirectToISBNForm) {
+            return <Redirect to='/categorylist/searchISBN'/>
+        }
         return (
             <div>
                 <div>
@@ -76,10 +90,7 @@ export default class ISBNForm extends Component {
                 </div>
 
                 <div className='book-image'>
-                    {/* <p>bib key: {this.state.isbn.bib_key}</p>
-                    <p>info url: {this.state.isbn.info_url}</p>
-                    <p>preview: {this.state.isbn.preview}</p>
-                    <p>preview url: {this.state.isbn.preview_url}</p> */}
+                  
                     <img src={this.state.isbn.thumbnail_url} width='100'/>
                 </div>
 
