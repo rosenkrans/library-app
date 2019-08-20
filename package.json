@@ -3,6 +3,8 @@
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
     "postinstall": "npm run build && echo 'Client built!'"
+  },
+  "dependencies": {
+    "react-bootstrap-date-picker": "^5.1.0"
   }
 }
-  
