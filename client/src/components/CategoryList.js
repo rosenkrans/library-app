@@ -38,8 +38,8 @@ export default class CategoryList extends Component {
                     <Link to={`/`}>Home</Link>
                 </div>
 
-                <div className="search-isbn-button">
-                    <Link to='/categorylist/searchISBN/'>Search By ISBN</Link>
+                <div className="search-isbn-link">
+                    <Link to='/categorylist/searchISBN/'>Search Book Info By ISBN</Link>
                 </div>
 
                 <div className="category-list-header"><h2>Category List</h2></div>

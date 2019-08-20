@@ -212,6 +212,10 @@ body {
   border-radius: 10px;
 }
 
+.search-isbn-link {
+  margin-top: 20px;
+}
+
 .isbn-search-form-div {
   display: flex;
   justify-content: center;
