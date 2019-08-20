@@ -111,7 +111,7 @@ export default class NewBookForm extends Component {
 						<Form.Control 
 							type='text' 
 							name='checked_out'
-							placeholder="Enter checked out y/n" 
+							placeholder="Enter checked out Y/N" 
 							id='checked-out'
 							onChange={this.handleChange}
 							value={this.state.newBook.checked_out}

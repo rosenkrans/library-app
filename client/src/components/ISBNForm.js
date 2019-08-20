@@ -25,7 +25,7 @@ export default class ISBNForm extends Component {
 
     fetchISBN = (event) => {
         event.preventDefault()  
-        axios.get(`http://openlibrary.org/api/books?bibkeys=ISBN:${this.state.searchISBN}`)
+        axios.get(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.state.searchISBN}`)
             .then(res => {
                 // let test = JSON.stringify(res.data)
                 // console.log(test)
