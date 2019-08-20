@@ -57,6 +57,23 @@ export default class Category extends Component {
         copiedCategory.books = copiedArray 
         this.setState({category: copiedCategory})
     }
+
+    handleSortAuthor = () => {
+        let copiedArray = [...this.state.category.books]
+        let copiedCategory = {...this.state.category} 
+        copiedArray.sort(function (a, b) {
+            if (a.author < b.author) {
+                return -1;              
+            }
+            if (a.author > b.author) {
+                return 1;
+            }
+            return 0;
+        })
+        console.log(copiedArray)
+        copiedCategory.books = copiedArray 
+        this.setState({category: copiedCategory})
+    }
     
     handleSubmit = (event) => {
         event.preventDefault()
@@ -144,7 +161,7 @@ export default class Category extends Component {
                         <tr>
                             <th>ID</th>
                             <th><button onClick={this.handleSort}>Title</button></th>
-                            <th>Author</th>
+                            <th><button onClick={this.handleSortAuthor}>Author</button></th>
                             <th>ISBN</th>
                             <th>Year Published</th>
                             <th>Checked Out</th>
