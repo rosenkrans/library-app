@@ -87,7 +87,7 @@ export default class SubjectForm extends Component {
                 </div>
 
                 <div>
-                    <h2>Subject Search Form</h2>
+                    <h2>Subject Search Form TEST</h2>
                 </div>
 
                 <div className='subject-search-form-div'>
