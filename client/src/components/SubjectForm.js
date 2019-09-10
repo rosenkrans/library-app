@@ -83,7 +83,7 @@ export default class SubjectForm extends Component {
         return (
             <div>
                 <div>
-                    <Link to={`/categorylist`}>Back to Categories List TEST</Link>
+                    <Link to={`/categorylist`}>Back to Categories List</Link>
                 </div>
 
                 <div>
