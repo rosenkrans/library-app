@@ -5,6 +5,7 @@ My Project 4 is a library app.
 
 1. Trello - https://trello.com/b/18ISbLzq/library-app
 1. Heroku - https://library-book-app.herokuapp.com/
+1. Open Library (API) - https://openlibrary.org/dev/docs/restful_api
 
 ## Coding languages and libraries
 
@@ -25,6 +26,7 @@ My Project 4 is a library app.
 * View list of books
 * Add, view, edit, and delete a member
 * View a list of members
+* Search book information using ISBN via an external API
 
 ## ERD:
 ![erd](client/src/components/images/proj4erd.jpg)
@@ -34,7 +36,9 @@ My Project 4 is a library app.
 ![erd](client/src/components/images/proj4wireframe2.jpg)
 
 ## Future Release Features:
-* 
-* 
+* Search by title of book
+* Search by author
+* Add a volunteers model
+* Make editing books only accessible to admin
 
 
