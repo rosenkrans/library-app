@@ -28,14 +28,12 @@ export default class ISBNForm extends Component {
         event.preventDefault()  
         axios.get(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.state.searchISBN}`)
             .then(res => {
-                // let test = JSON.stringify(res.data)
-                // console.log(test)
+                
                 let data = res.data
-                // console.log(res.data)
+                
                 let parsedData = JSON.parse(data.substring(data.indexOf("{"), data.lastIndexOf("}") + 1))
                 console.log(typeof parsedData)
-                // let stringData = JSON.stringify(parsedData)
-                // console.log(stringData)
+                
                 let resultKeys = Object.keys
 
                 if(Object.keys(parsedData).length !== 0) {
@@ -45,7 +43,7 @@ export default class ISBNForm extends Component {
                 } else (window.alert("CANNOT GET BOOK INFORMATION FROM THAT ISBN"))
             })
             .catch(err => {
-                // window.alert("CANNOT GET BOOK INFORMATION FROM THAT ISBN")
+                
                 
                 console.log(err);
                 this.setState({redirectToISBNForm: true})

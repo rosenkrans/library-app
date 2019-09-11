@@ -42,9 +42,9 @@ export default class CategoryList extends Component {
                     <Link to='/categorylist/searchISBN/'>Search Book Info By ISBN</Link>
                 </div>
 
-                <div className="search-subject-link">
+                {/* <div className="search-subject-link">
                     <Link to='/categorylist/searchSubject/'>Search Book Info By Subject</Link>
-                </div>
+                </div> */}
 
                 <div className="category-list-header"><h2>Category List</h2></div>
                                

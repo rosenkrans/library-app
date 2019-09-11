@@ -46,24 +46,24 @@ export default class SubjectForm extends Component {
                 // let test = JSON.stringify(res.data)
                 // console.log(test)
                 let data = res.data
-                console.log(res.data)
-                // let parsedData = JSON.parse(data.substring(data.indexOf("{"), data.lastIndexOf("}") + 1))
-                // console.log(typeof parsedData)
+                // console.log(res.data)
+                let parsedData = JSON.parse(data.substring(data.indexOf("{"), data.lastIndexOf("}") + 1))
+                console.log(typeof parsedData)
                 // let stringData = JSON.stringify(parsedData)
                 // console.log(stringData)
-                // let resultKeys = Object.keys
+                let resultKeys = Object.keys
 
-                if(res.data) {
+                // if(res.data) {
+                //     this.setState({
+                //         subject: res.data[0],
+                //     })
+                // } else (window.alert("CANNOT GET BOOK INFORMATION FROM THAT SUBJECT"))
+
+                if(Object.keys(parsedData).length !== 0) {
                     this.setState({
-                        subject: res.data[0],
+                        isbn: Object.values(parsedData)[0],
                     })
                 } else (window.alert("CANNOT GET BOOK INFORMATION FROM THAT SUBJECT"))
-
-                // if(Object.keys(parsedData).length !== 0) {
-                //     this.setState({
-                //         isbn: Object.values(parsedData)[0],
-                //     })
-                // } else (window.alert("CANNOT GET BOOK INFORMATION FROM THAT ISBN"))
             })
             .catch(err => {
                 window.alert("CANNOT GET BOOK INFORMATION FROM THAT SUBJECT")
@@ -87,13 +87,13 @@ export default class SubjectForm extends Component {
                 </div>
 
                 <div>
-                    <h2>Subject Search Form TEST</h2>
+                    <h2>Subject Search Form</h2>
                 </div>
 
                 <div className='subject-search-form-div'>
                     <Form onSubmit={this.fetchSubject} className='subject-search-form'>
                         <Form.Group>
-                        <Form.Label>TEST</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control 
                             type='text' 
                             name='subject'
@@ -126,11 +126,11 @@ export default class SubjectForm extends Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className='subject-key-td'>{this.state.subject.key}</td>
+                                <td>{this.state.subject.key}</td>
                                 <td>{this.state.subject.name}</td>
                                 <td>{this.state.subject.subject_type}</td>
                                 <td>{this.state.subject.work_count}</td>
-                                <td>{this.state.subject.works}</td>
+                                {/*     <td>{this.state.subject.works}</td> */}
                             </tr>
                             
                         </tbody>

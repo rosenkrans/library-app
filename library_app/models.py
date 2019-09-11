@@ -10,7 +10,7 @@ class Book(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=400)
     isbn = models.CharField(max_length=255)
-    year_published = models.CharField(max_length=4)
+    year_published = models.CharField(min_length=4, max_length=4, default='')
     checked_out = models.CharField(max_length=1, default='')
     checked_out_name = models.CharField(max_length=100, default='')
     due_date = models.CharField(max_length=10, default='')

@@ -11,6 +11,7 @@ import Book from "./components/Book";
 import Main from "./components/Main";
 import ISBNForm from "./components/ISBNForm";
 import SubjectForm from "./components/SubjectForm";
+import test from "./components/test";
 import "./App.css";
 
 class App extends Component {
@@ -38,8 +39,9 @@ class App extends Component {
                 <div className="App">
                     <Switch>
                       <Route exact path="/" component={Main}/>
-                      <Route path="/categorylist/searchISBN" component={ISBNForm} />
+                      <Route path="/categorylist/test" component={test}/>
                       <Route path="/categorylist/searchSubject" component={SubjectForm}/>
+                      <Route path="/categorylist/searchISBN" component={ISBNForm} />
                       <Route path="/categorylist/:categoryId/booklist/:bookId" component={Book}/>
                       <Route path="/categorylist/:categoryId/book/new" component={NewBookForm}/>
                       <Route path="/categorylist/:categoryId" component={Category}/> 
